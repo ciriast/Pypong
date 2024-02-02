@@ -1,4 +1,5 @@
 import pygame
+import random
 
 class PyPongGame:
     def __init__(self):
@@ -10,6 +11,13 @@ class PyPongGame:
 
     def run_game(self):
         while self.running:
+            my_x = random.randint(0, 800-1)
+            my_y = random.randint(0, 600-1)
+
+            pixel = random.randint(0, 255)
+
+            self.screen.set_at((my_x, my_y), (pixel))
+
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
                     self.running = False
