@@ -12,12 +12,16 @@ class PyPongGame:
         pygame.display.set_caption("My Pypong Game")
         self.running = True
 
-        random_x = random.randint(0, WIDTH)
-        random_y = random.randint(0, HEIGHT)
-        random_color = (random.randint(0, 255), random.randint(0, 255), random.randint(0, 255))
+        self.medium_x = WIDTH // 2
+        self.medium_y = HEIGHT // 2
+        self.random_color = (random.randint(0, 255), random.randint(0, 255), random.randint(0, 255))
 
-        self.screen.set_at((random_x, random_y), (random_color))
-        
+        self.pixel_size = 100
+
+        self.draw_pixel()
+    def draw_pixel(self):
+        pygame.draw.rect(self.screen, self.random_color, (self.medium_x, self.medium_y, self.pixel_size, self.pixel_size))
+
     def run_game(self):
         while self.running:
             for event in pygame.event.get():
