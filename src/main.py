@@ -19,6 +19,7 @@ class PyPongGame:
         self.pixel_size = 100
 
         self.draw_pixel()
+
     def draw_pixel(self):
         pygame.draw.rect(self.screen, self.random_color, (self.medium_x, self.medium_y, self.pixel_size, self.pixel_size))
 
@@ -27,6 +28,9 @@ class PyPongGame:
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
                     self.running = False
+                if event.type == pygame.KEYDOWN:
+                    if event.key == pygame.K_RIGHT:
+                        print("Move right")
             self.update_screen()
 
     def update_screen(self):
