@@ -31,6 +31,12 @@ class PyPongGame:
                 if event.type == pygame.KEYDOWN:
                     if event.key == pygame.K_RIGHT:
                         print("Move right")
+                    elif event.key == pygame.K_LEFT:
+                        print("Move left")
+                    elif event.key == pygame.K_a:
+                        print("Move left")
+                    elif event.key == pygame.K_d:
+                        print("Move right")
             self.update_screen()
 
     def update_screen(self):
