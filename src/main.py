@@ -24,7 +24,7 @@ class PyPongGame:
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
                     self.running = False
-                if event.type == pygame.KEYDOWN:
+                if event.type == pygame.KEYDOWN and (self.position_x < WIDTH - self.pixel_size):
                     if event.key == pygame.K_RIGHT:
                         self.position_x += 10
                     elif event.key == pygame.K_LEFT:
