@@ -1,8 +1,6 @@
 import pygame
 import random
-
-WIDTH = 800
-HEIGHT = 600
+from settings import WIDTH, HEIGHT
 
 class PyPongGame:
     def __init__(self):
