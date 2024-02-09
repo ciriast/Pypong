@@ -27,7 +27,7 @@ class PyPongGame:
                 if event.type == pygame.KEYDOWN and (self.position_x < WIDTH - self.pixel_size):
                     if event.key == pygame.K_RIGHT:
                         self.position_x += 10
-                    elif event.key == pygame.K_LEFT:
+                    elif event.key == pygame.K_LEFT and (self.position_x > 0):
                         self.position_x -= 10
                     elif event.key == pygame.K_a:
                         print("Move left")
