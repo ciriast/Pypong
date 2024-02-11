@@ -24,16 +24,16 @@ class PyPongGame:
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
                     self.running = False
-                if event.type == pygame.KEYDOWN and (self.position_x < WIDTH - self.pixel_size):
-                    if event.key == pygame.K_RIGHT:
-                        self.position_x += 10
-                    elif event.key == pygame.K_LEFT and (self.position_x > 0):
-                        self.position_x -= 10
-                    elif event.key == pygame.K_a:
-                        print("Move left")
-                    elif event.key == pygame.K_d:
-                        print("Move right")
+                
+                keys = pygame.key.get_pressed()
 
+                if (keys[pygame.K_RIGHT] or keys[pygame.K_d]) and (self.position_x < WIDTH - self.pixel_size):
+                    self.position_x += 10
+                    print("Right arrow pressed:", keys[pygame.K_RIGHT])
+                if (keys[pygame.K_LEFT] or keys[pygame.K_a]) and (self.position_x > 0):
+                    self.position_x -= 10
+                    print("Left arrow pressed:", keys[pygame.K_LEFT])
+                    
             self.rectangle.x = self.position_x
             self.rectangle.y = self.position_y
             
