@@ -13,10 +13,10 @@ class PyPongGame:
         self.random_color = (random.randint(0, 255), random.randint(0, 255), random.randint(0, 255))
 
         self.pixel_size_width = 120
-        self.pixel_size_height = 5
+        self.pixel_size_height = 10
       
         self.position_x = WIDTH // 2
-        self.position_y = HEIGHT // 2
+        self.position_y = HEIGHT - self.pixel_size_height
 
         self.rectangle = pygame.Rect(self.position_x, self.position_y, self.pixel_size_width, self.pixel_size_height)
 
