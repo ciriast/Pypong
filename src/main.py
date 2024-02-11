@@ -12,12 +12,13 @@ class PyPongGame:
 
         self.random_color = (random.randint(0, 255), random.randint(0, 255), random.randint(0, 255))
 
-        self.pixel_size = 100
+        self.pixel_size_width = 120
+        self.pixel_size_height = 5
       
         self.position_x = WIDTH // 2
         self.position_y = HEIGHT // 2
 
-        self.rectangle = pygame.Rect(self.position_x, self.position_y, self.pixel_size, self.pixel_size)
+        self.rectangle = pygame.Rect(self.position_x, self.position_y, self.pixel_size_width, self.pixel_size_height)
 
     def run_game(self):
         while self.running:
@@ -27,12 +28,10 @@ class PyPongGame:
                 
                 keys = pygame.key.get_pressed()
 
-                if (keys[pygame.K_RIGHT] or keys[pygame.K_d]) and (self.position_x < WIDTH - self.pixel_size):
-                    self.position_x += 10
-                    print("Right arrow pressed:", keys[pygame.K_RIGHT])
+                if (keys[pygame.K_RIGHT] or keys[pygame.K_d]) and (self.position_x < WIDTH - self.pixel_size_width):
+                    self.position_x += 15
                 if (keys[pygame.K_LEFT] or keys[pygame.K_a]) and (self.position_x > 0):
-                    self.position_x -= 10
-                    print("Left arrow pressed:", keys[pygame.K_LEFT])
+                    self.position_x -= 15
                     
             self.rectangle.x = self.position_x
             self.rectangle.y = self.position_y
