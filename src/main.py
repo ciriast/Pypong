@@ -11,6 +11,7 @@ class PyPongGame:
         self.running = True
 
         self.random_color = (random.randint(0, 255), random.randint(0, 255), random.randint(0, 255))
+        self.random_color_circle = (random.randint(0, 255), random.randint(0, 255), random.randint(0, 255))
 
         self.pixel_size_width = 120
         self.pixel_size_height = 10
