@@ -12,7 +12,7 @@ class PyPongGame:
 
         self.random_color = (random.randint(0, 255), random.randint(0, 255), random.randint(0, 255))
         self.random_color_circle = (random.randint(0, 255), random.randint(0, 255), random.randint(0, 255))
-
+        
         self.pixel_size_width = 120
         self.pixel_size_height = 10
       
@@ -39,6 +39,7 @@ class PyPongGame:
             
             self.screen.fill((0, 0, 0))
             pygame.draw.rect(self.screen, self.random_color, self.rectangle)
+            pygame.draw.circle(self.screen, self.random_color_circle, [320, 320], 5, 0)
             pygame.display.flip()
 
     def update_screen(self):
