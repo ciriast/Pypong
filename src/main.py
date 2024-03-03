@@ -39,7 +39,7 @@ class PyPongGame:
             
             self.screen.fill((0, 0, 0))
             pygame.draw.rect(self.screen, self.random_color, self.rectangle)
-            pygame.draw.circle(self.screen, self.random_color_circle, [320, 320], 5, 0)
+            pygame.draw.circle(self.screen, self.random_color_circle, [320, 320], 5)
             pygame.display.flip()
 
     def update_screen(self):
