@@ -45,5 +45,6 @@ class PyPongGame:
     def update_screen(self):
         pygame.display.flip()
 
-game = PyPongGame()
-game.run_game()
+if __name__ == "__main__":
+    game = PyPongGame()
+    game.run_game()
