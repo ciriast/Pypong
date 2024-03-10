@@ -21,6 +21,16 @@ class PyPongGame:
 
         self.rectangle = pygame.Rect(self.position_x, self.position_y, self.pixel_size_width, self.pixel_size_height)
 
+    def get_random_color(self):
+        return (random.randint(0, 255), random.randint(0, 255), random.randint(0, 255))
+
+    def handle_keys(self):
+        keys = pygame.key.get_pressed()
+        if (keys[pygame.K_RIGHT] or keys[pygame.K_d]) and (self.position_x < WIDTH - self.pixel_size_width):
+            self.position_x += self.move_speed
+        if (keys[pygame.K_LEFT] or keys[pygame.K_a]) and (self.position_x > 0):
+            self.position_x -= self.move_speed
+      
     def run_game(self):
         while self.running:
             for event in pygame.event.get():
