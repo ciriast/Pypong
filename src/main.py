@@ -38,7 +38,7 @@ class PyPongGame:
                 if event.type == pygame.QUIT:
                     self.running = False
                 
-            self.handle_keys();
+            self.handle_keys()
                     
             self.rectangle.x = self.position_x
             self.rectangle.y = self.position_y
@@ -46,9 +46,9 @@ class PyPongGame:
             self.screen.fill((0, 0, 0))
 
             pygame.draw.rect(self.screen, self.random_color, self.rectangle)
-            pygame.draw.circle(self.screen, self.random_color_circle, [320, 320], 5)
+            pygame.draw.circle(self.screen, self.random_color_circle, [320, 320], BALL_RADIUS)
             pygame.display.flip()
-            
+
     def update_screen(self):
         pygame.display.flip()
 
