@@ -38,23 +38,17 @@ class PyPongGame:
                 if event.type == pygame.QUIT:
                     self.running = False
                 
-                self.handle_keys();
-                
-                keys = pygame.key.get_pressed()
-
-                if (keys[pygame.K_RIGHT] or keys[pygame.K_d]) and (self.position_x < WIDTH - self.pixel_size_width):
-                    self.position_x += 15
-                if (keys[pygame.K_LEFT] or keys[pygame.K_a]) and (self.position_x > 0):
-                    self.position_x -= 15
+            self.handle_keys();
                     
             self.rectangle.x = self.position_x
             self.rectangle.y = self.position_y
             
             self.screen.fill((0, 0, 0))
+
             pygame.draw.rect(self.screen, self.random_color, self.rectangle)
             pygame.draw.circle(self.screen, self.random_color_circle, [320, 320], 5)
             pygame.display.flip()
-
+            
     def update_screen(self):
         pygame.display.flip()
 
