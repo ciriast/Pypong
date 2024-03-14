@@ -1,6 +1,6 @@
 import pygame
 import random
-from settings import WIDTH, HEIGHT
+from settings import WIDTH, HEIGHT, MOVE_SPEED, BALL_RADIUS
 
 class PyPongGame:
     def __init__(self):
@@ -15,7 +15,7 @@ class PyPongGame:
         
         self.pixel_size_width = 120
         self.pixel_size_height = 10
-      
+     
         self.position_x = WIDTH // 2
         self.position_y = HEIGHT - self.pixel_size_height
 
