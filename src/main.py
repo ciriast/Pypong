@@ -15,6 +15,7 @@ class PyPongGame:
         
         self.pixel_size_width = 120
         self.pixel_size_height = 10
+        self.move_speed = MOVE_SPEED
      
         self.position_x = WIDTH // 2
         self.position_y = HEIGHT - self.pixel_size_height
@@ -36,6 +37,8 @@ class PyPongGame:
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
                     self.running = False
+                
+                self.handle_keys();
                 
                 keys = pygame.key.get_pressed()
 
